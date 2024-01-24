@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main()
+{
+  int i, lb, ub, middle, n, search, arr[100];
+  printf("Enter number of elements");
+  scanf("%d", &n);
+  printf("Enter your elements");
+  for (i = 0; i < n; i++)
+  {
+       scanf("%d", &arr[i]);
+  }
+  printf("Enter value to find\n");
+  scanf("%d", &search);
+  lb = 0;
+  ub = n - 1;
+  middle = (lb+ub)/2;
+  while (lb <= ub)
+  {
+      if (arr[middle] < search)
+      {
+          lb = middle + 1;
+          middle=(lb+ub)/2;
+      } 
+      else if (arr[middle] == search) 
+      {
+          printf("Element found at location %d",middle+1);
+          break;
+      }
+      else
+      {
+          ub = middle - 1; 
+          middle = (lb + ub)/2;
+      }
+      if (lb>ub)
+      {
+          printf("Element not found");
+      }
+  }
+}
