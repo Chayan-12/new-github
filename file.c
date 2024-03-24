@@ -22,4 +22,4 @@ int main() {
     return 0;
 }
 
-This is demonstration purpose only
+// Demonstration only
